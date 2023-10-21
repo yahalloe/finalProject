@@ -1,4 +1,4 @@
-#include "library.c"
+#include "header.h"
 
 int main (void)
 {   
@@ -45,11 +45,10 @@ int main (void)
             
             } while (winner == ' ');
             printf("\nrestart? (Y/N)");
-            scanf("%c");
             scanf(" %c",&resp);
             resp = toupper(resp);
         } while (resp == 'Y');
-    printf("thans for playing!");
+        typeString(text6);
     }
     else if (s == 2) {
         CLEAR;

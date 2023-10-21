@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -18,6 +19,31 @@
 #define COLORBLUE COLOR(\033[34m)
 #endif
 #endif
+
+extern const char* text1;
+extern const char* text2;
+extern const char* text3;
+extern const char* rule1;
+extern const char* rule2;
+extern const char* rule3;
+extern const char* rule4;
+extern const char* text7;
+extern const char* text5;
+extern const char* text6;
+/*
+ * for some reason, i need to declare these here even tho I didn't need to 
+ * declare the char here. I'm not sure but it's probably due to the type. Otherwise,
+ * if I didn't do this, I need to include library.c file on the main file.
+ * 
+ * update: 
+ * I know the reason now. I need to declare it here but with extern. extern ensures
+ * that the content of the intialization is somewhere in the files.
+ */
+
+
+//===============================================================================================
+//                                        funtions
+//===============================================================================================
 
 /*
  *  function put out text 1 and so on in a type-writter like fashion
