@@ -1,3 +1,9 @@
+/*
+ * 
+ *  23 10.20
+ *
+ */
+
 #ifndef __header_h
 #include "header.h"
 #endif
@@ -7,10 +13,10 @@ int main (void)
     COLORBLUE;
     CLEAR;
     typeString(text1);
-    Sleep(1000);
+    getchar();
     CLEAR;
     typeString(text2);
-    Sleep(1000);
+    getchar();
     CLEAR;
     typeString(text3);
 
@@ -48,7 +54,7 @@ int main (void)
                 printWinner(winner);
             
             } while (winner == ' ');
-            printf("\n\t\t\t\trestart? (Y/N)");
+            printf("\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n");
             scanf(" %c",&resp);
             resp = toupper(resp);
         } while (resp == 'Y');

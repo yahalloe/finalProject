@@ -5,23 +5,23 @@ char board [3][3];
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
 
-const char* text1 = "Welcome to the world's most played 2D game!\n";
-const char* text2 = "The Tic-tac-toe!\n";
-const char* text3 = "Press 1 to play\nPress 2 to read rules\n";
+const char* text1 = "Welcome to the world's most played 2D game!\n\nPress any key  ";
+const char* text2 = "The Tic-tac-toe!\n\nPress any key  ";
+const char* text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
 const char* rule1 = "Rules:-\n";
 const char* rule2 = "\n1:Each player will be entering the number to put respective X or O in the desired position";
-const char* rule3 = "\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \n  vertically will be declared as the winner";
+const char* rule3 = "\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
 const char* rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
 const char* text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
 const char* text5 = "\nRestart? (Y/N): ";
-const char* text6 = "\n\t\t\t\tThanks for playing!\n";
+const char* text6 = "\n\t\t\t\t\tOKAY!\n\t\t\t\tThanks for playing!\n\n";
 
 void typeString(const char *text)   
 {
     for (int i = 0; text[i] != '\0'; i++) {   
         putchar(text[i]);
         fflush(stdout);
-        Sleep(100);
+        Sleep(75);
     }
 }
 
@@ -36,8 +36,8 @@ void resetBoard()
 
 void printBoard() 
 {
-    printf("\n\n\n\t\t\tTic-tac-toe\n");
-    printf("\n\t\t\tYou play as X, Bot will play as 0\n\n");
+    printf("\n\n\n\t\t\t\tTic-tac-toe\n");
+    printf("\n\t\t\t\t  You = X\n\t\t\t\t  Bot = 0\n\n");
     printf("\t\t\t\t %c | %c | %c \n", board[0][0],board[0][1],board[0][2]);
     printf("\t\t\t\t---|---|---\n");
     printf("\t\t\t\t %c | %c | %c \n", board[1][0],board[1][1],board[1][2]);
@@ -129,12 +129,12 @@ char checkWinner()
 void printWinner(char winner) 
 {
     if(winner == PLAYER) {
-        printf("\n\t\t\t\tYOU WIN!\n");
+        printf("\n\t\t\t\t  YOU WIN!\n");
     }
     else if(winner == COMPUTER) {
-        printf("\n\t\t\t\tYOU LOSE!\n");
+        printf("\n\t\t\t\t  YOU LOSE!\n");
     }
     else {
-        printf("\n\t\t\t\tIT'S A TIE!\n");
+        printf("\n\t\t\t\t  IT'S A TIE!\n");
     }
 }

@@ -38,6 +38,7 @@ extern const char* rule4;
 extern const char* text7;
 extern const char* text5;
 extern const char* text6;
+
 /*
  * for some reason, i need to declare these here even tho I didn't need to 
  * declare the char here. I'm not sure but it's probably due to the type. Otherwise,
@@ -46,6 +47,8 @@ extern const char* text6;
  * update: 
  * I know the reason now. I need to declare it here but with extern. extern ensures
  * that the content of the intialization is somewhere in the files.
+ * - I can just put the declaration and everything on the source file (library.c) here but
+ * I think it's much cleaner if I put them in different files like I'm doing rn.
  */
 
 
@@ -55,7 +58,7 @@ extern const char* text6;
 
 
 /*
- *  function put out text 1 and so on in a type-writter like fashion
+ *  function to put out text 1 and so on in a type-writter like fashion
  */
 void typeString(const char* text);
 
