@@ -1,8 +1,16 @@
 #pragma once
+#ifndef __stdio_h
 #include <stdio.h>
+#endif
+#ifndef __stdlib_h
 #include <stdlib.h>
+#endif
+#ifndef __ctype_h
 #include <ctype.h>
+#endif
+#ifndef __time_h
 #include <time.h>
+#endif
 #if defined(_WIN32) || defined(__WIN32__)
 #ifndef __windows_h
 #include <windows.h>
@@ -10,12 +18,12 @@
 #define COLORBLUE system("color 09")
 #endif
 #else
+#define CLEAR system("clear")   //tput reset
 #ifndef __termios_h
 #include <termios.h>
 #endif
 #ifndef __unistd_h
 #include <unistd.h>
-#define CLEAR system("clear")   //tput reset
 #define COLORBLUE COLOR(\033[34m)
 #endif
 #endif
@@ -44,6 +52,7 @@ extern const char* text6;
 //===============================================================================================
 //                                        funtions
 //===============================================================================================
+
 
 /*
  *  function put out text 1 and so on in a type-writter like fashion

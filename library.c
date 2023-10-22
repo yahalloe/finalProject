@@ -1,4 +1,6 @@
+#ifndef __header_h
 #include "header.h"
+#endif
 char board [3][3]; 
 const char PLAYER = 'X';
 const char COMPUTER = 'O';

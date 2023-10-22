@@ -1,4 +1,6 @@
+#ifndef __header_h
 #include "header.h"
+#endif
 
 int main (void)
 {   
@@ -33,11 +35,13 @@ int main (void)
 
                     playerMove();
                     winner = checkWinner();
-                    if (winner != ' ' || checkFreeSpaces() == 0) {break;}
+                    if (winner != ' ' || checkFreeSpaces() == 0) 
+                    {break;}
     
                     computerMove();
                     winner = checkWinner();
-                    if (winner != ' ' || checkFreeSpaces() == 0) {break;}
+                    if (winner != ' ' || checkFreeSpaces() == 0) 
+                    {break;}
                 }
                 CLEAR;
                 printBoard();
@@ -48,6 +52,7 @@ int main (void)
             scanf(" %c",&resp);
             resp = toupper(resp);
         } while (resp == 'Y');
+        CLEAR;
         typeString(text6);
     }
     else if (s == 2) {
