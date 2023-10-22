@@ -14,7 +14,7 @@ const char* rule3 = "\n2:Player who gets a combination of 3 same characters eith
 const char* rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
 const char* text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
 const char* text5 = "\nRestart? (Y/N): ";
-const char* text6 = "Thanks for playing!";
+const char* text6 = "\n\t\t\t\tThanks for playing!\n";
 
 void typeString(const char *text)   
 {
@@ -36,13 +36,13 @@ void resetBoard()
 
 void printBoard() 
 {
-    printf("Tic-tac-toe\n");
-    printf("You play as X, Bot will play as 0\n\n");
-    printf(" %c | %c | %c \n", board[0][0],board[0][1],board[0][2]);
-    printf("---|---|---\n");
-    printf(" %c | %c | %c \n", board[1][0],board[1][1],board[1][2]);
-    printf("---|---|---\n");
-    printf(" %c | %c | %c \n", board[2][0],board[2][1],board[2][2]);
+    printf("\n\n\n\t\t\tTic-tac-toe\n");
+    printf("\n\t\t\tYou play as X, Bot will play as 0\n\n");
+    printf("\t\t\t\t %c | %c | %c \n", board[0][0],board[0][1],board[0][2]);
+    printf("\t\t\t\t---|---|---\n");
+    printf("\t\t\t\t %c | %c | %c \n", board[1][0],board[1][1],board[1][2]);
+    printf("\t\t\t\t---|---|---\n");
+    printf("\t\t\t\t %c | %c | %c \n", board[2][0],board[2][1],board[2][2]);
 }
 
 int checkFreeSpaces()
@@ -62,10 +62,10 @@ void playerMove()
 {
     int x,y;
     do {
-        printf("\nEnter row #(1-3)(horizontal): ");
+        printf("\n\t\t\tEnter row #(1-3)(horizontal): ");
         scanf("%d", &x);
         x--;
-        printf("Enter collumn #(1-3)(vertical): ");
+        printf("\t\t\tEnter collumn #(1-3)(vertical): ");
         scanf("%d", &y);
         y--;
 
@@ -129,12 +129,12 @@ char checkWinner()
 void printWinner(char winner) 
 {
     if(winner == PLAYER) {
-        printf("YOU WIN!");
+        printf("\n\t\t\t\tYOU WIN!\n");
     }
     else if(winner == COMPUTER) {
-        printf("YOU LOSE!");
+        printf("\n\t\t\t\tYOU LOSE!\n");
     }
     else {
-        printf("IT'S A TIE!");
+        printf("\n\t\t\t\tIT'S A TIE!\n");
     }
 }

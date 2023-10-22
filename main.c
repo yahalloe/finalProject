@@ -48,7 +48,7 @@ int main (void)
                 printWinner(winner);
             
             } while (winner == ' ');
-            printf("\nrestart? (Y/N)");
+            printf("\n\t\t\t\trestart? (Y/N)");
             scanf(" %c",&resp);
             resp = toupper(resp);
         } while (resp == 'Y');
