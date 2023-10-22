@@ -4,7 +4,7 @@ A tictactoe in C
 features fetured in the game includes:
     VS bot game mode
 
-=================================================
+
 # Running the program
 
 Running the program is very straight forward. 
