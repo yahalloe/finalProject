@@ -24,7 +24,7 @@ gcc tictactoe.c -o tictactoe
 ```
 clang compiler
 ```
-gcc tictactoe.c -o tictactoe
+clang tictactoe.c -o tictactoe
  ./tictactoe
 
 ```
