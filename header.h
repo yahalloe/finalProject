@@ -63,6 +63,11 @@ extern const char* text6;
 void typeString(const char* text);
 
 /*
+ * Prints a Welcome Message
+ */
+void greet(void);
+
+/*
  * resets the board after the move had inputed by the user
  */
 void resetBoard();

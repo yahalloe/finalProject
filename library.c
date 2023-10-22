@@ -25,6 +25,19 @@ void typeString(const char *text)
     }
 }
 
+void greet(void)
+{
+    COLORBLUE;
+    CLEAR;
+    typeString(text1);
+    getchar();
+    CLEAR;
+    typeString(text2);
+    getchar();
+    CLEAR;
+    typeString(text3);
+}
+
 void resetBoard() 
 {
     for (int i = 0; i < 3; i++){

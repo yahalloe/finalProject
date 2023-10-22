@@ -13,16 +13,7 @@
 
 int main (void)
 {   
-    COLORBLUE;
-    CLEAR;
-    typeString(text1);
-    getchar();
-    CLEAR;
-    typeString(text2);
-    getchar();
-    CLEAR;
-    typeString(text3);
-
+    greet();
     int s;
     scanf("%d",&s);
     if (s == 1)
