@@ -19,11 +19,12 @@ type the Commands:
 gcc compiler
 
 ```
-$ gcc tictactoe.c -o tictactoe
-$ ./tictactoe
+gcc -o main main. library.c
+ ./main
 ```
 clang compiler
 ```
-$ clang tictactoe.c -o tictactoe
-$ ./tictactoe
+gcc -o main main. library.c
+ ./main
+
 ```
