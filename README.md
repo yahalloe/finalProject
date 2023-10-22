@@ -28,3 +28,6 @@ gcc -o main main. library.c
  ./main
 
 ```
+Things to be implimented:
+1. harder bot
+2. leaderboard file
