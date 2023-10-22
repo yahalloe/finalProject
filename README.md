@@ -8,6 +8,8 @@ features fetured in the game includes:
 
 Running the program is very straight forward. 
 
+Just open the **main.exe** file
+
 Just complie the program using your favorite C compiler
 
 **Using Terminal** 
