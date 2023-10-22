@@ -1,7 +1,10 @@
 /*
- * 
+ * TIC_TAC_TOE
  *  23 10.20
+ * 
+ * GitHub Repository: https://github.com/yahalloe/finalProject-.git
  *
+ * main.c
  */
 
 #ifndef __header_h
