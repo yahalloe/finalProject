@@ -1,19 +1,25 @@
-#ifndef __header_h
+/*
+ * TIC_TAC_TOE
+ *  23 10.20
+ * 
+ * GitHub Repository: https://github.com/yahalloe/finalProject-.git
+ *
+ * library.c
+ */
 #include "header.h"
-#endif
 char board [3][3]; 
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
 
-const char* text1 = "Welcome to the world's most played 2D game!\n\nPress any key  ";
-const char* text2 = "The Tic-tac-toe!\n\nPress any key  ";
+const char* text1 = "Welcome to the world's most played 2D game! ";
+const char* text2 = "The Tic-tac-toe! ";
 const char* text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
 const char* rule1 = "Rules:-\n";
 const char* rule2 = "\n1:Each player will be entering the number to put respective X or O in the desired position";
 const char* rule3 = "\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
 const char* rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
 const char* text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
-const char* text5 = "\nRestart? (Y/N): ";
+const char* text5 = "\n\t\t\t\t Game over\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n\t\t\t\t";
 const char* text6 = "\n\t\t\t\t\tOKAY!\n\t\t\t\tThanks for playing!\n\n";
 
 void typeString(const char *text)   
@@ -30,15 +36,28 @@ void greet(void)
     COLORBLUE;
     CLEAR;
     typeString(text1);
+    Sleep(900);
+    printf("\n\nPress enter");
     getchar();
     CLEAR;
     typeString(text2);
+    Sleep(900);
+    printf("\n\nPress enter");
     getchar();
     CLEAR;
     typeString(text3);
 }
 
-void resetBoard() 
+void printRules(void) 
+{
+    CLEAR;
+    typeString(rule1);
+    typeString(rule2);
+    typeString(rule3);
+    typeString(rule4);
+}
+
+void resetBoard(void) 
 {
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++) {
@@ -47,7 +66,7 @@ void resetBoard()
     }
 }
 
-void printBoard() 
+void printBoard(void) 
 {
     printf("\n\n\n\t\t\t\tTic-tac-toe\n");
     printf("\n\t\t\t\t  You = X\n\t\t\t\t  Bot = 0\n\n");
@@ -58,7 +77,7 @@ void printBoard()
     printf("\t\t\t\t %c | %c | %c \n", board[2][0],board[2][1],board[2][2]);
 }
 
-int checkFreeSpaces()
+int checkFreeSpaces(void)
 {
     int freeSpaces = 9;
     for (int i = 0; i < 3; i++) {
@@ -71,7 +90,7 @@ int checkFreeSpaces()
     return freeSpaces;
 }
 
-void playerMove()
+void playerMove(void)
 {
     int x,y;
     do {
@@ -92,7 +111,7 @@ void playerMove()
     } while (board[x][y] != ' ');
 } 
 
-void computerMove()
+void computerMove(void)
 {
     //
     srand(time(0));
@@ -111,7 +130,7 @@ void computerMove()
     }
 }
 
-char checkWinner() 
+char checkWinner(void) 
 {
     // rows
     for (int i = 0; i < 3; i++){

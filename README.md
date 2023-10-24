@@ -32,5 +32,6 @@ gcc -o main main. library.c
 
 ```
 Things to be implimented:
-1. harder bot
-2. leaderboard file
+1. harder bot (the color or theme changes)
+2. leaderboard file // fopen()
+3. 1 on 1 game mode

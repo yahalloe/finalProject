@@ -1,16 +1,16 @@
+/*
+ * TIC_TAC_TOE
+ *  23 10.20
+ * 
+ * GitHub Repository: https://github.com/yahalloe/finalProject-.git
+ *
+ * header.h
+ */
 #pragma once
-#ifndef __stdio_h
 #include <stdio.h>
-#endif
-#ifndef __stdlib_h
 #include <stdlib.h>
-#endif
-#ifndef __ctype_h
 #include <ctype.h>
-#endif
-#ifndef __time_h
 #include <time.h>
-#endif
 #if defined(_WIN32) || defined(__WIN32__)
 #ifndef __windows_h
 #include <windows.h>
@@ -18,7 +18,7 @@
 #define COLORBLUE system("color 09")
 #endif
 #else
-#define CLEAR system("clear")   //tput reset
+#define CLEAR system("clear")   
 #ifndef __termios_h
 #include <termios.h>
 #endif
@@ -28,6 +28,8 @@
 #endif
 #endif
 
+extern const char PLAYER;
+extern const char COMPUTER;
 extern const char* text1;
 extern const char* text2;
 extern const char* text3;
@@ -45,7 +47,7 @@ extern const char* text6;
  * if I didn't do this, I need to include library.c file on the main file.
  * 
  * update: 
- * I know the reason now. I need to declare it here but with extern. extern ensures
+ * -I know the reason now. I need to declare it here but with extern. extern ensures
  * that the content of the intialization is somewhere in the files.
  * - I can just put the declaration and everything on the source file (library.c) here but
  * I think it's much cleaner if I put them in different files like I'm doing rn.
@@ -53,7 +55,7 @@ extern const char* text6;
 
 
 //===============================================================================================
-//                                        funtions
+//                                     funtions 
 //===============================================================================================
 
 
@@ -68,34 +70,44 @@ void typeString(const char* text);
 void greet(void);
 
 /*
+ * Prints the rules
+ */
+void printRules(void);
+
+/*
+ * the funtion for versus player mode
+ */
+void vsPlayer(void)
+
+/*
  * resets the board after the move had inputed by the user
  */
-void resetBoard();
+void resetBoard(void);
 
 /*
  * Prints the 2d board
  */
-void printBoard();
-
+void printBoard(void);
 /*
  * Checks whether there is no input on the coordinate on the board
  */
-int checkFreeSpaces();
+int checkFreeSpaces(void);
 
 /*
  * funtion for the player's move
  */
-void playerMove();
+void playerMove(void);
 
 /*
  * funtion for the player's move
  */
-void computerMove();
+void computerMove(void);
 
 /*
- * checks all winning condition 
+ * return what chracter had won
+ * else; retuen a ' ' for tie
  */
-char checkWinner();
+char checkWinner(void);
 
 /*
  * prints if there is a winner, unless tie

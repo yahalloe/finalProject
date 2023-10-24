@@ -6,10 +6,7 @@
  *
  * main.c
  */
-
-#ifndef __header_h
 #include "header.h"
-#endif
 
 int main (void)
 {   
@@ -46,9 +43,8 @@ int main (void)
                 CLEAR;
                 printBoard();
                 printWinner(winner);
-            
-            } while (winner == ' ');
-            printf("\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n");
+            } while (winner == ' ' && resp == 'Y');     // fixed a bug on the first try: when Tie, it auto restart
+            typeString(text5);
             scanf(" %c",&resp);
             resp = toupper(resp);
         } while (resp == 'Y');
@@ -56,11 +52,7 @@ int main (void)
         typeString(text6);
     }
     else if (s == 2) {
-        CLEAR;
-        typeString(rule1);
-        typeString(rule2);
-        typeString(rule3);
-        typeString(rule4);
+    printRules();
     }
     else {
         CLEAR;
