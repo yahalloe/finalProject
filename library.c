@@ -11,16 +11,16 @@ char board [3][3];
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
 
-const char* text1 = "Welcome to the world's most played 2D game! ";
-const char* text2 = "The Tic-tac-toe! ";
-const char* text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
-const char* rule1 = "Rules:-\n";
-const char* rule2 = "\n1:Each player will be entering the number to put respective X or O in the desired position";
-const char* rule3 = "\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
-const char* rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
-const char* text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
-const char* text5 = "\n\t\t\t\t Game over\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n\t\t\t\t";
-const char* text6 = "\n\t\t\t\t\tOKAY!\n\t\t\t\tThanks for playing!\n\n";
+const char *text1 = "Welcome to the world's most played 2D game! ";
+const char *text2 = "The Tic-tac-toe! ";
+const char *text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
+const char *rule1 = "Rules:-\n";
+const char *rule2 = "\n1:Each player will be entering the number to put respective X or O in the desired position";
+const char *rule3 = "\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
+const char *rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
+const char *text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
+const char *text5 = "\n\t\t\t\t Game over\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n\t\t\t\t";
+const char *text6 = "\n\t\t\t\t\tOKAY!\n\t\t\t\tThanks for playing!\n\n";
 
 void typeString(const char *text)   
 {
