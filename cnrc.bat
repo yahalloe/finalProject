@@ -1,6 +1,6 @@
 @echo off
 
-set SOURCE_FILE=main
+set SOURCE_FILE=main.c library
 
 set EXECUTABLE=main
 

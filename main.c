@@ -7,7 +7,6 @@
  * main.c
  */
 #include "header.h"
-#include "library.c"
 
 int main (void)
 {   
@@ -72,7 +71,6 @@ int main (void)
                     printBoard();
                 }
 
-                CLEAR;
                 printWinner(winner);
             } 
             while (winner == ' ' && resp == 'Y');
@@ -80,6 +78,7 @@ int main (void)
             typeString(text5);
             scanf(" %c",&resp);
             resp = toupper(resp);
+
         } 
         while (resp == 'Y');
 

@@ -16,7 +16,7 @@ const int interTextDuration = 900;
 const char *text1 = "Welcome to the world's most played 2D game! ";
 const char *text2 = "The Tic-tac-toe! ";
 const char *text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
-const char* text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\n> ";
+const char *text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\nchoice: ";
 const char *rule1 = "Rules:-\n";
 const char *rule2 = "\n1: Each player will be entering the number to put respective X or O in the desired position";
 const char *rule3 = "\n2: Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
@@ -35,6 +35,7 @@ void typeString(const char *text)
 }
 
 int getMode(void) {
+    CLEAR;
     typeString(text4);
     int m;
     while (1) {
@@ -111,15 +112,16 @@ void humanMove(char playerLetter)
 {
     int x,y;
     do {
-        printf("\n\t\t\tPlayer %c | Enter row #(1-3) (horizontal): ", playerLetter);
+        printf("\n\t\t\t\t  Player %c \n\t\t\tEnter row #(1-3) (horizontal): ", playerLetter);
         scanf("%d", &x);
         x--;
-        printf("\t\t\tPlayer %c | Enter column #(1-3) (vertical): ", playerLetter);
+        printf("\n\t\t\t\t  Player %c \n\t\t\tEnter column #(1-3) (vertical): ", playerLetter);
         scanf("%d", &y);
         y--;
 
         if(board[x][y] != ' ') {
-            printf("Invalid Move!\n");
+
+            printf("\t\t\t\tInvalid Move!\n");
         }
         else{
             board[x][y] = playerLetter;

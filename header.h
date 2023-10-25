@@ -75,6 +75,11 @@ void greet(void);
 void printRules(void);
 
 /*
+ * 
+ */
+int getMode(void);
+
+/*
  * resets the board after the move had inputed by the user
  */
 void resetBoard(void);
