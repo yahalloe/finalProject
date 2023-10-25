@@ -64,7 +64,7 @@ int main (void)
                             computerMove();
                             switchHumanBot = 'h';
                         }
-                        
+
                     }
 
                     winner = checkWinner();
@@ -94,5 +94,6 @@ int main (void)
         typeString(text7);
         getchar();
     }
+    COLORBLUE;
     return 0;
 }

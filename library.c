@@ -174,11 +174,8 @@ char checkWinner(void)
 
 void printWinner(char winner) 
 {
-    if(winner == PLAYER) {
-        printf("\n\t\t\t\t  YOU WIN!\n");
-    }
-    else if(winner == COMPUTER) {
-        printf("\n\t\t\t\t  YOU LOSE!\n");
+    if (winner != ' ') {
+        printf("\n\t\t\t\t  %c WINS!\n", winner);
     }
     else {
         printf("\n\t\t\t\t  IT'S A TIE!\n");
