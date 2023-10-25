@@ -30,16 +30,16 @@
 
 extern const char PLAYER;
 extern const char COMPUTER;
-extern const char* text1;
-extern const char* text2;
-extern const char* text3;
-extern const char* rule1;
-extern const char* rule2;
-extern const char* rule3;
-extern const char* rule4;
-extern const char* text7;
-extern const char* text5;
-extern const char* text6;
+extern const char *text1;
+extern const char *text2;
+extern const char *text3;
+extern const char *rule1;
+extern const char *rule2;
+extern const char *rule3;
+extern const char *rule4;
+extern const char *text7;
+extern const char *text5;
+extern const char *text6;
 
 /*
  * for some reason, i need to declare these here even tho I didn't need to 
@@ -73,11 +73,6 @@ void greet(void);
  * Prints the rules
  */
 void printRules(void);
-
-/*
- * the funtion for versus player mode
- */
-void vsPlayer(void);
 
 /*
  * resets the board after the move had inputed by the user
