@@ -75,11 +75,6 @@ void greet(void);
 void printRules(void);
 
 /*
- * the funtion for versus player mode
- */
-void vsPlayer(void)
-
-/*
  * resets the board after the move had inputed by the user
  */
 void resetBoard(void);
