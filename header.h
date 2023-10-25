@@ -77,7 +77,7 @@ void printRules(void);
 /*
  * the funtion for versus player mode
  */
-void vsPlayer(void)
+void vsPlayer(void);
 
 /*
  * resets the board after the move had inputed by the user
@@ -94,9 +94,9 @@ void printBoard(void);
 int checkFreeSpaces(void);
 
 /*
- * funtion for the player's move
+ * funtion for the player's (human) move
  */
-void playerMove(void);
+void humanMove(char playerLetter);
 
 /*
  * funtion for the player's move

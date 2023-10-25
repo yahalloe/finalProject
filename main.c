@@ -7,22 +7,34 @@
  * main.c
  */
 #include "header.h"
+#include "library.c"
 
 int main (void)
 {   
     greet();
+    COLORBLUE;
     int s;
     scanf("%d",&s);
     if (s == 1)
     {   
-    char resp = ' ';
-        do 
-        {char winner = ' ';
-            do 
-            {
+        char resp = ' ';
+
+        do {
+
+            int mode = getMode();
+
+            char winner = ' ';
+            do {
                 system("color f4");
                 resp = ' ';
                 winner = ' ';
+
+                // Used for switching the letters
+                char currentPlayer = 'X';
+
+                // Used for switching between human & bot
+                char switchHumanBot = 'h';
+
                 resetBoard();
 
                 while(winner == ' ' && checkFreeSpaces() != 0)
@@ -30,29 +42,52 @@ int main (void)
                     CLEAR;
                     printBoard();
 
-                    playerMove();
+                    if (mode == 1) {
+                        // Player vs player
+
+                        humanMove(currentPlayer);
+
+                        // Reverse letter
+                        if (currentPlayer == 'X') {
+                            currentPlayer = 'O';
+                        } else {
+                            currentPlayer = 'X';
+                        }
+
+                    } else if (mode == 2) {
+                        // Player vs computer
+                        
+                        if (switchHumanBot == 'h') {
+                            humanMove('X');
+                            switchHumanBot = 'b';
+                        } else {
+                            computerMove();
+                            switchHumanBot = 'h';
+                        }
+                        
+                    }
+
                     winner = checkWinner();
-                    if (winner != ' ' || checkFreeSpaces() == 0) 
-                    {break;}
-    
-                    computerMove();
-                    winner = checkWinner();
-                    if (winner != ' ' || checkFreeSpaces() == 0) 
-                    {break;}
+                    CLEAR;
+                    printBoard();
                 }
+
                 CLEAR;
-                printBoard();
                 printWinner(winner);
-            } while (winner == ' ' && resp == 'Y');     // fixed a bug on the first try: when Tie, it auto restart
+            } 
+            while (winner == ' ' && resp == 'Y');
+
             typeString(text5);
             scanf(" %c",&resp);
             resp = toupper(resp);
-        } while (resp == 'Y');
+        } 
+        while (resp == 'Y');
+
         CLEAR;
         typeString(text6);
     }
     else if (s == 2) {
-    printRules();
+        printRules();
     }
     else {
         CLEAR;

@@ -10,13 +10,16 @@
 char board [3][3]; 
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
+const int interCharDuration = 75;
+const int interTextDuration = 900;
 
 const char* text1 = "Welcome to the world's most played 2D game! ";
 const char* text2 = "The Tic-tac-toe! ";
 const char* text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
+const char* text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\n> ";
 const char* rule1 = "Rules:-\n";
-const char* rule2 = "\n1:Each player will be entering the number to put respective X or O in the desired position";
-const char* rule3 = "\n2:Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
+const char* rule2 = "\n1: Each player will be entering the number to put respective X or O in the desired position";
+const char* rule3 = "\n2: Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
 const char* rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
 const char* text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
 const char* text5 = "\n\t\t\t\t Game over\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n\t\t\t\t";
@@ -27,8 +30,22 @@ void typeString(const char *text)
     for (int i = 0; text[i] != '\0'; i++) {   
         putchar(text[i]);
         fflush(stdout);
-        Sleep(75);
+        Sleep(interCharDuration);
     }
+}
+
+int getMode(void) {
+    typeString(text4);
+    int m;
+    while (1) {
+        scanf("%d", &m);
+        if (m == 1 || m == 2) {
+            break;
+        }
+        printf("\nInput invalid\n\n> ");
+    }
+    
+    return m;
 }
 
 void greet(void)
@@ -36,12 +53,12 @@ void greet(void)
     COLORBLUE;
     CLEAR;
     typeString(text1);
-    Sleep(900);
+    Sleep(interTextDuration);
     printf("\n\nPress enter");
     getchar();
     CLEAR;
     typeString(text2);
-    Sleep(900);
+    Sleep(interTextDuration);
     printf("\n\nPress enter");
     getchar();
     CLEAR;
@@ -69,7 +86,7 @@ void resetBoard(void)
 void printBoard(void) 
 {
     printf("\n\n\n\t\t\t\tTic-tac-toe\n");
-    printf("\n\t\t\t\t  You = X\n\t\t\t\t  Bot = 0\n\n");
+    // printf("\n\t\t\t\t  You = X\n\t\t\t\t  Bot = 0\n\n");
     printf("\t\t\t\t %c | %c | %c \n", board[0][0],board[0][1],board[0][2]);
     printf("\t\t\t\t---|---|---\n");
     printf("\t\t\t\t %c | %c | %c \n", board[1][0],board[1][1],board[1][2]);
@@ -90,14 +107,14 @@ int checkFreeSpaces(void)
     return freeSpaces;
 }
 
-void playerMove(void)
+void humanMove(char playerLetter)
 {
     int x,y;
     do {
-        printf("\n\t\t\tEnter row #(1-3)(horizontal): ");
+        printf("\n\t\t\tPlayer %c | Enter row #(1-3) (horizontal): ", playerLetter);
         scanf("%d", &x);
         x--;
-        printf("\t\t\tEnter collumn #(1-3)(vertical): ");
+        printf("\t\t\tPlayer %c | Enter column #(1-3) (vertical): ", playerLetter);
         scanf("%d", &y);
         y--;
 
@@ -105,7 +122,7 @@ void playerMove(void)
             printf("Invalid Move!\n");
         }
         else{
-            board[x][y] = PLAYER;
+            board[x][y] = playerLetter;
             break;
         } 
     } while (board[x][y] != ' ');
@@ -113,7 +130,7 @@ void playerMove(void)
 
 void computerMove(void)
 {
-    //
+    // seed by time
     srand(time(0));
     int x,y;
     if (checkFreeSpaces() > 0) {
@@ -133,28 +150,25 @@ void computerMove(void)
 char checkWinner(void) 
 {
     // rows
-    for (int i = 0; i < 3; i++){
+    for (int i = 0; i < 3; i++) {
         if (board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
             return board[i][0];
         }
     }
     // collums
-     for (int i = 0; i < 3; i++){
+    for (int i = 0; i < 3; i++) {
         if (board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
             return board[0][i];
         }
     }
     // diagonals
-       for (int i = 0; i < 3; i++){
-        if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            return board[0][0];
-        }
+    if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+        return board[0][0];
     }
-       for (int i = 0; i < 3; i++){
-        if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-            return board[0][2];
-        }
+    if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+        return board[0][2];
     }
+
     return ' ';
 }   
 
