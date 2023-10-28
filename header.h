@@ -11,21 +11,17 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
+#define INTER_CHAR_DURATION 75
+#define INTER_TEXT_DURATION 900
 #if defined(_WIN32) || defined(__WIN32__)
-#ifndef __windows_h
 #include <windows.h>
 #define CLEAR system("cls")
 #define COLORBLUE system("color 09")
-#endif
 #else
 #define CLEAR system("clear")   
-#ifndef __termios_h
 #include <termios.h>
-#endif
-#ifndef __unistd_h
 #include <unistd.h>
 #define COLORBLUE COLOR(\033[34m)
-#endif
 #endif
 
 extern const char PLAYER;
@@ -41,6 +37,7 @@ extern const char *text7;
 extern const char *text5;
 extern const char *text6;
 
+
 /*
  * for some reason, i need to declare these here even tho I didn't need to 
  * declare the char here. I'm not sure but it's probably due to the type. Otherwise,
@@ -51,6 +48,8 @@ extern const char *text6;
  * that the content of the intialization is somewhere in the files.
  * - I can just put the declaration and everything on the source file (library.c) here but
  * I think it's much cleaner if I put them in different files like I'm doing rn.
+ * 10.28 - now I know why scanf() isn't safe. It's because it can only read 
+ * one type of data.
  */
 
 
@@ -62,7 +61,7 @@ extern const char *text6;
 /*
  *  function to put out text 1 and so on in a type-writter like fashion
  */
-void typeString(const char* text);
+void typeString(const char *text);
 
 /*
  * Prints a Welcome Message
@@ -88,6 +87,7 @@ void resetBoard(void);
  * Prints the 2d board
  */
 void printBoard(void);
+
 /*
  * Checks whether there is no input on the coordinate on the board
  */

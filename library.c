@@ -10,18 +10,15 @@
 char board [3][3]; 
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
-const int interCharDuration = 75;
-const int interTextDuration = 900;
 
 const char *text1 = "Welcome to the world's most played 2D game! ";
 const char *text2 = "The Tic-tac-toe! ";
-const char *text3 = "Press 1 to play\nPress 2 to read rules\n\nchoice: ";
+const char *text3 = "Play\t\t(1)\nRead rules\t(2)\n\nchoice: ";
 const char *text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\nchoice: ";
 const char *rule1 = "Rules:-\n";
 const char *rule2 = "\n1: Each player will be entering the number to put respective X or O in the desired position";
 const char *rule3 = "\n2: Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
 const char *rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
-const char *text7 = "Wrong choice.\nNOW THE WOLRD WILL FALL!\n\n...\n\n...\n\n...";
 const char *text5 = "\n\t\t\t\t Game over\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n\t\t\t\t";
 const char *text6 = "\n\t\t\t\t\tOKAY!\n\t\t\t\tThanks for playing!\n\n";
 
@@ -30,23 +27,8 @@ void typeString(const char *text)
     for (int i = 0; text[i] != '\0'; i++) {   
         putchar(text[i]);
         fflush(stdout);
-        Sleep(interCharDuration);
+        Sleep(INTER_CHAR_DURATION);
     }
-}
-
-int getMode(void) {
-    CLEAR;
-    typeString(text4);
-    int m;
-    while (1) {
-        scanf("%d", &m);
-        if (m == 1 || m == 2) {
-            break;
-        }
-        printf("\nInput invalid\n\n> ");
-    }
-    
-    return m;
 }
 
 void greet(void)
@@ -54,12 +36,12 @@ void greet(void)
     COLORBLUE;
     CLEAR;
     typeString(text1);
-    Sleep(interTextDuration);
+    Sleep(INTER_TEXT_DURATION);
     printf("\n\nPress enter");
     getchar();
     CLEAR;
     typeString(text2);
-    Sleep(interTextDuration);
+    Sleep(INTER_TEXT_DURATION);
     printf("\n\nPress enter");
     getchar();
     CLEAR;
@@ -73,6 +55,25 @@ void printRules(void)
     typeString(rule2);
     typeString(rule3);
     typeString(rule4);
+}
+
+int getMode(void) {
+    CLEAR;
+    typeString(text4);
+    int m;
+    while (1) {
+        scanf("%d", &m);
+        if (m == 1 || m == 2) {
+            break;
+        }
+        else {
+        CLEAR;
+        printf("\nAgain bruh.\n\n\a> ");
+        int c;   
+        while ((c = getchar()) != '\n' && c != EOF) { }
+        }
+    }
+    return m;
 }
 
 void resetBoard(void) 

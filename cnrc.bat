@@ -1,16 +1,13 @@
 @echo off
 
-set SOURCE_FILE=main.c library
+set SOURCE_FILE=main.c library.c
 
 set EXECUTABLE=main
 
-gcc %SOURCE_FILE%.c -o %EXECUTABLE%
+gcc -Wimplicit -Werror %SOURCE_FILE% -o  %EXECUTABLE%
 
 if %errorlevel% neq 0 (
     echo Compilation failed!
     exit /b 1
 )
-
-.\%EXECUTABLE%
-
-pause
+%EXECUTABLE%

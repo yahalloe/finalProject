@@ -13,9 +13,27 @@ int main (void)
     greet();
     COLORBLUE;
     int s;
-    scanf("%d",&s);
-    if (s == 1)
-    {   
+    while (1) 
+    {
+        scanf("%d",&s);
+        if (s == 1 || s == 2)
+            break;
+        else {
+            int x = rand() % 2 + 1;
+            if (x == 1) {
+            CLEAR;
+            printf("Bruh, only 1 or 2 lol.\n\a> ");
+            }
+            if (x == 2) {
+            CLEAR;    
+            printf("Bruh. *sigh*\nchoice 1 or 2!\n\a> ");
+            }
+        int c;   
+        while ((c = getchar()) != '\n' && c != EOF) { }
+        }
+    }
+    if (s == 1)  
+    {  
         char resp = ' ';
 
         do {
@@ -46,14 +64,11 @@ int main (void)
 
                         humanMove(currentPlayer);
 
-                        // Reverse letter
-                        if (currentPlayer == 'X') {
-                            currentPlayer = 'O';
-                        } else {
-                            currentPlayer = 'X';
-                        }
+                        // Reverse the letter
+                        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+                    } 
 
-                    } else if (mode == 2) {
+                    else if (mode == 2) {
                         // Player vs computer
                         
                         if (switchHumanBot == 'h') {
@@ -88,11 +103,6 @@ int main (void)
     else if (s == 2) {
         printRules();
     }
-    else {
-        CLEAR;
-        typeString(text7);
-        getchar();
-    }
-    COLORBLUE;
+
     return 0;
 }
