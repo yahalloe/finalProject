@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
-#define INTER_CHAR_DURATION 75
+#define INTER_CHAR_DURATION 50
 #define INTER_TEXT_DURATION 900
 #if defined(_WIN32) || defined(__WIN32__)
 #include <windows.h>
@@ -36,6 +36,8 @@ extern const char *rule4;
 extern const char *text7;
 extern const char *text5;
 extern const char *text6;
+extern const char *text7;
+extern const char *text8;
 
 
 /*
