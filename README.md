@@ -23,16 +23,12 @@ type the Commands:
 
 ```
 $ gcc -o main main. library.c
-```
-```
 $ main
 ```
 
 ### clang compiler
 ```
 $ gcc -o main main. library.c
-```
-```
 $ main
 ```
 Things to be implimented:
