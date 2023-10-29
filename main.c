@@ -80,6 +80,9 @@ int main (void)
                                 switchHumanBot = 'h';
                             }
                     }
+                    // else if (mode == 3) {
+                        // hard bot 
+                }
 
                     winner = checkWinner();
                     CLEAR;

@@ -83,6 +83,7 @@ int getMode(void) {
                 typeString(text8);
                 COLORBLUE;                
                 exit(0);
+                // return m = 3;
             }
 
             else 
