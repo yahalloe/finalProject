@@ -2,8 +2,11 @@
 A tictactoe in C
 
 features fetured in the game includes:
-    VS bot game mode
-
+* VS bot game mode
+  - normal bot
+  - hard bot (under development)
+* player vs player
+  
 
 # Running the program
 
