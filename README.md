@@ -19,13 +19,13 @@ Install GCC / clang compiler
 go into the downloaded tictactoe directory 
 type the Commands:
 
-#### gcc compiler
+### gcc compiler
 
 ```
 $ gcc -o main main. library.c
  ./main
 ```
-#### clang compiler
+### clang compiler
 ```
 $ gcc -o main main. library.c
  ./main
