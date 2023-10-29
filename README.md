@@ -23,13 +23,17 @@ type the Commands:
 
 ```
 $ gcc -o main main. library.c
- ./main
 ```
+```
+$ main
+```
+
 ### clang compiler
 ```
 $ gcc -o main main. library.c
- ./main
-
+```
+```
+$ main
 ```
 Things to be implimented:
 1. harder bot (the color or theme changes)
