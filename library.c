@@ -13,14 +13,16 @@ const char COMPUTER = 'O';
 
 const char *text1 = "Welcome to the world's most played 2D game! ";
 const char *text2 = "The Tic-tac-toe! ";
-const char *text3 = "Play\t\t(1)\nRead rules\t(2)\n\nchoice: ";
-const char *text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\nchoice: ";
+const char *text3 = "Play\t\t(1)\nRead rules\t(2)\n\n> ";
+const char *text4 = "Choose play mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\nchoice: ";
 const char *rule1 = "Rules:-\n";
 const char *rule2 = "\n1: Each player will be entering the number to put respective X or O in the desired position";
 const char *rule3 = "\n2: Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
 const char *rule4 = "\n\nEnjoy the game! Be a Winner!\n\n";
 const char *text5 = "\n\t\t\t\t Game over\n\t\t\t\t  restart?\n\t\t\t\t   (Y/N)\n\t\t\t\t";
 const char *text6 = "\n\t\t\t\t\tOKAY!\n\t\t\t\tThanks for playing!\n\n";
+const char *text7 = "Bot Mode\n\nEasy\t(1)\nHard\t(2)\n\n> ";
+const char *text8 = "Not avalable\n\nUnder development";
 
 void typeString(const char *text)   
 {
@@ -63,8 +65,29 @@ int getMode(void) {
     int m;
     while (1) {
         scanf("%d", &m);
-        if (m == 1 || m == 2) {
+        if (m == 1 ) {
             break;
+        }
+        else if (m == 2) {
+            CLEAR;
+            typeString(text7);
+            int botMode;
+            scanf("%d",&botMode);
+
+            if (botMode == 1) {
+                break;
+            }
+
+            else if (botMode == 2) {
+                CLEAR;
+                typeString(text8);
+                COLORBLUE;                
+                exit(0);
+                // return m = 3;
+            }
+
+            else 
+            printf("\nAgain bruh.\n\n\a> ");
         }
         else {
         CLEAR;
@@ -181,6 +204,6 @@ void printWinner(char winner)
         printf("\n\t\t\t\t  %c WINS!\n", winner);
     }
     else {
-        printf("\n\t\t\t\t  IT'S A TIE!\n");
+        printf("\n\t\t\t\t IT'S A TIE!\n");
     }
 }
