@@ -99,6 +99,7 @@ int main (void)
 
         CLEAR;
         typeString(text6);
+        COLORBLUE;
     }
     else if (s == 2) {
         printRules();
@@ -106,3 +107,4 @@ int main (void)
 
     return 0;
 }
+

@@ -17,11 +17,11 @@
 #include <windows.h>
 #define CLEAR system("cls")
 #define COLORBLUE system("color 09")
-#else
-#define CLEAR system("clear")   
+#elif defined (__linux__)
 #include <termios.h>
 #include <unistd.h>
-#define COLORBLUE COLOR(\033[34m)
+#define CLEAR system("clear")   
+#define COLORBLUE system("tput setaf 4")
 #endif
 
 extern const char PLAYER;

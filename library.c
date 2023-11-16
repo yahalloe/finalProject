@@ -7,7 +7,7 @@
  * library.c
  */
 #include "header.h"
-char board [3][3]; 
+static char board [3][3]; 
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
 
