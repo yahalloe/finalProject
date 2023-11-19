@@ -10,7 +10,7 @@
 
 int main (void)
 {   
-    //greet();
+    greet();
     COLORBLUE;
     int s;
     while (1) 
@@ -32,7 +32,6 @@ int main (void)
         while ((c = getchar()) != '\n' && c != EOF) { }
         }
     }
-
     if (s == 1)  
     {  
         char resp = ' ';
@@ -71,18 +70,16 @@ int main (void)
 
                     else if (mode == 2) {
                         // Player vs computer
+                        
+                        if (switchHumanBot == 'h') {
+                            humanMove('X');
+                            switchHumanBot = 'b';
+                        } else {
+                            computerMove();
+                            switchHumanBot = 'h';
+                        }
 
-                            if (switchHumanBot == 'h') {
-                                humanMove('X');
-                                switchHumanBot = 'b';
-                            } else {
-                                computerMove();
-                                switchHumanBot = 'h';
-                            }
                     }
-                    // else if (mode == 3) {
-                        // hard bot 
-                }
 
                     winner = checkWinner();
                     CLEAR;
@@ -97,11 +94,11 @@ int main (void)
             scanf(" %c",&resp);
             resp = toupper(resp);
 
-        } while (resp == 'Y');
+        } 
+        while (resp == 'Y');
 
         CLEAR;
         typeString(text6);
-        COLORBLUE;
     }
     else if (s == 2) {
         printRules();
@@ -109,4 +106,3 @@ int main (void)
 
     return 0;
 }
-
