@@ -91,7 +91,7 @@ int main (void)
             while (winner == ' ' && resp == 'Y');
 
             typeString(text5);
-            scanf(" %c",&resp);
+            resp = getch();
             resp = toupper(resp);
 
         } 
@@ -99,6 +99,7 @@ int main (void)
 
         CLEAR;
         typeString(text6);
+        COLORBLUE;
     }
     else if (s == 2) {
         printRules();
