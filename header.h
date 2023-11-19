@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
+#include <conio.h>
 #define INTER_CHAR_DURATION 75
 #define INTER_TEXT_DURATION 900
 #if defined(_WIN32) || defined(__WIN32__)
