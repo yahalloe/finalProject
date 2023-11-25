@@ -91,7 +91,7 @@ int main (void)
             while (winner == ' ' && resp == 'Y');
 
             typeString(text5);
-            resp = getch();
+            resp = getch(); // experimenting with getch
             resp = toupper(resp);
 
         } 
