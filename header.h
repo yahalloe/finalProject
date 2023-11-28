@@ -15,7 +15,7 @@
 #define INTER_CHAR_DURATION 75
 #define INTER_TEXT_DURATION 900
 #if defined(_WIN32) || defined(__WIN32__)
-#include <windows.h>
+#include <Windows.h>
 #define CLEAR system("cls")
 #define COLORBLUE system("color 09")
 #else
