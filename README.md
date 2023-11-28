@@ -1,14 +1,21 @@
-# A tic-tac-toe in C
+# A tic-tac-toe written in C
 
-# ✨features
+# ✨ features
+![image](https://github.com/yahalloe/finalProject/assets/147316835/3f347701-ffbd-4aaa-b904-831b45328fe8)
 
-* VS bot game mode
+* 🤖 A VS bot game mode
   - normal bot
   - hard bot (under development)
-* player vs player
-  
+* 🧍‍♂️A player vs player
+![image](https://github.com/yahalloe/finalProject/assets/147316835/1dcf6d41-ddbd-4483-bdde-f5ae0401ade5)
 
-# Running the program
+🛠️ Installation
+clone the repo 
+```
+$ git clone https://github.com/yahalloe/finalProject.git
+```
+
+# 🚀 Running the program
 
 Running the program is very straight forward. 
 
@@ -20,8 +27,10 @@ Just compile the program using your favorite C compiler
 
 **Using Terminal** 
 
-Install GCC / clang compiler
-go into the downloaded tic-tac-toe directory 
+Install your favorite C compiler Gcc/clang/tcc etc...
+or if you're using an IDE, just run the file there.
+
+Go into the downloaded tic-tac-toe directory.
 type the Commands:
 
 ### gcc compiler
