@@ -29,6 +29,9 @@ $ git clone https://github.com/yahalloe/finalProject.git
 Running the program is very straight forward. 
 
 Just open the **main.exe** file
+```
+$ ./main.exe
+```
 
 ### or 
 
