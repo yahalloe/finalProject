@@ -9,6 +9,7 @@
   - normal bot
   - ~~hard bot~~ (under development)
 * 🧍‍♂️A player vs player
+  
 
 ![image](https://github.com/yahalloe/finalProject/assets/147316835/1dcf6d41-ddbd-4483-bdde-f5ae0401ade5)
 
