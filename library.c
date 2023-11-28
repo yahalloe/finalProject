@@ -7,7 +7,7 @@
  * library.c
  */
 #include "header.h"
-char board [3][3]; 
+static char board [3][3]; 
 const char PLAYER = 'X';
 const char COMPUTER = 'O';
 
@@ -62,7 +62,7 @@ int getMode(void) {
     typeString(text4);
     int m;
     while (1) {
-        scanf("%d", &m);
+        scanf_s("%d", &m);
         if (m == 1 || m == 2) {
             break;
         }
@@ -114,10 +114,10 @@ void humanMove(char playerLetter)
     int x,y;
     do {
         printf("\n\t\t\t\t  Player %c \n\t\t\tEnter row #(1-3) (horizontal): ", playerLetter);
-        scanf("%d", &x);
+        scanf_s("%d", &x);
         x--;
         printf("\n\t\t\t\t  Player %c \n\t\t\tEnter column #(1-3) (vertical): ", playerLetter);
-        scanf("%d", &y);
+        scanf_s("%d", &y);
         y--;
 
         if(board[x][y] != ' ') {

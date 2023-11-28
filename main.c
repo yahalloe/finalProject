@@ -14,7 +14,7 @@ int main (void) {
     int s;
     while (1) 
     {
-        scanf("%d",&s);
+        scanf_s("%d",&s);
         if (s == 1 || s == 2)
             break;
         else {
@@ -90,7 +90,7 @@ int main (void) {
             while (winner == ' ' && resp == 'Y');
 
             typeString(text5);
-            resp = getch(); // experimenting with getch
+            resp = _getch(); // experimenting with getch
             resp = toupper(resp);
 
         } 
