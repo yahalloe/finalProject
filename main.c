@@ -8,8 +8,7 @@
  */
 #include "header.h"
 
-int main (void)
-{   
+int main (void) {   
     greet();
     COLORBLUE;
     int s;
