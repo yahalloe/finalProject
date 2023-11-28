@@ -68,3 +68,4 @@ Things to be implemented:
 1. harder bot (the color or theme changes)
 2. leaderboard file // fopen()
 3. ~~1 on 1 game mode~~
+4. different color for each symbol i.e. X - light blue 0 - gray
