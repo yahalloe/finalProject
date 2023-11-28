@@ -1,6 +1,6 @@
 # A tic-tac-toe in C
 
-# ⚡features
+# ✨features
 
 * VS bot game mode
   - normal bot
