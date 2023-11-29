@@ -4,7 +4,7 @@
  * 
  * GitHub Repository: https://github.com/yahalloe/finalProject-.git
  *
- * header.h
+ * h.h
  */
 #pragma once
 #include <stdio.h>
