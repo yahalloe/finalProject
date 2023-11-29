@@ -58,9 +58,10 @@ void printRules(void)
 }
 
 int getMode(void) {
+    int m;
+    int c; 
     CLEAR;
     typeString(text4);
-    int m;
     while (1) {
         scanf_s("%d", &m);
         if (m == 1 || m == 2) {
@@ -68,8 +69,7 @@ int getMode(void) {
         }
         else {
         CLEAR;
-        printf("\nAgain bruh.\n\n\a> ");
-        int c;   
+        printf("\nAgain bruh.\n\n\a> ");  
         while ((c = getchar()) != '\n' && c != EOF) { }
         }
     }
@@ -132,10 +132,13 @@ void humanMove(char playerLetter)
 } 
 
 void computerMove(void)
-{
+{   
+    int x;
+    int y;
+    
     // seed by time
     srand(time(0));
-    int x,y;
+
     if (checkFreeSpaces() > 0) {
         do 
         {

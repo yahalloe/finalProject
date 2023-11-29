@@ -9,9 +9,11 @@
 #include "header.h"
 
 int main (void) {   
+    int s;
+    int c;  
     greet();
     COLORBLUE;
-    int s;
+
     while (1) 
     {
         scanf_s("%d",&s);
@@ -26,8 +28,7 @@ int main (void) {
             if (x == 2) {
             CLEAR;    
             printf("Bruh. *sigh*\nchoice 1 or 2!\n\a> ");
-            }
-        int c;   
+            } 
         while ((c = getchar()) != '\n' && c != EOF) { }
         }
     }
@@ -38,19 +39,13 @@ int main (void) {
         do {
 
             int mode = getMode();
-
+            char currentPlayer = 'X'; // Used for switching the letters
+            char switchHumanBot = 'h'; // Used for switching between human & bot
             char winner = ' ';
             do {
                 system("color f4");
                 resp = ' ';
                 winner = ' ';
-
-                // Used for switching the letters
-                char currentPlayer = 'X';
-
-                // Used for switching between human & bot
-                char switchHumanBot = 'h';
-
                 resetBoard();
 
                 while(winner == ' ' && checkFreeSpaces() != 0)
@@ -63,7 +58,7 @@ int main (void) {
 
                         humanMove(currentPlayer);
 
-                        // Reverse the letter
+                        // Reverses the letter
                         currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
                     } 
 

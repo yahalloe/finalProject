@@ -18,11 +18,11 @@
 #include <Windows.h>
 #define CLEAR system("cls")
 #define COLORBLUE system("color 09")
-#else
+#elif defined (unix) || defined(__unix) || defined(__unix) || defined(__linux__)
 #define CLEAR system("clear")   
 #include <termios.h>
 #include <unistd.h>
-#define COLORBLUE COLOR(\033[34m)
+#define COLORBLUE printf("\033[34m")
 #endif
 
 extern const char PLAYER;
@@ -30,6 +30,7 @@ extern const char COMPUTER;
 extern const char *text1;
 extern const char *text2;
 extern const char *text3;
+extern const char *text4;
 extern const char *rule1;
 extern const char *rule2;
 extern const char *rule3;
