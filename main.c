@@ -6,7 +6,7 @@
  *
  * main.c
  */
-#include "header.h"
+#include "h.h"
 
 int main (const int argc, const char* argv[]) {   
     int s;
