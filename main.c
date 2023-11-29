@@ -8,9 +8,13 @@
  */
 #include "header.h"
 
-int main (void) {   
+int main (const int argc, const char* argv[]) {   
     int s;
     int c;  
+    if (argc != 1) {
+        printf("too many arguments to function.");
+        return 0;
+    } 
     greet();
     COLORBLUE;
 
@@ -27,7 +31,7 @@ int main (void) {
             }
             if (x == 2) {
             CLEAR;    
-            printf("Bruh. *sigh*\nchoice 1 or 2!\n\a> ");
+            printf("Bruh. *sigh*\nchoose 1 or 2!\n\a> ");
             } 
         while ((c = getchar()) != '\n' && c != EOF) { }
         }
