@@ -19,9 +19,9 @@
 #define CLEAR system("cls")
 #define COLORBLUE system("color 09")
 #elif defined (unix) || defined(__unix) || defined(__unix) || defined(__linux__)
-#define CLEAR system("clear")   
 #include <termios.h>
 #include <unistd.h>
+#define CLEAR system("clear")   
 #define COLORBLUE printf("\033[34m")
 #endif
 
@@ -107,7 +107,7 @@ void computerMove(void);
 
 /*
  * return what chracter had won
- * else; retuen a ' ' for tie
+ * else; return a ' ' for tie
  */
 char checkWinner(void);
 
