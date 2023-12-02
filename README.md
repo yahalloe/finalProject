@@ -1,3 +1,4 @@
+#c
 # A tic-tac-toe written in C
 
 ---
@@ -39,7 +40,7 @@ Just compile the program using your favorite C compiler
 
 **Using Terminal** 
 
-Install your favorite C compiler gcc/clang/tcc etc...
+Install your favorite C compiler gcc/clang/tcc/msvc etc...
 If you're using an IDE, just run the file there.
 
 Go into the downloaded tic-tac-toe directory.
