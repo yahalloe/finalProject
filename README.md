@@ -31,7 +31,7 @@ Running the program is very straight forward.
 
 Just open the **main.exe** file
 ```
-$ ./main.exe
+$ ./bin/main.exe
 ```
 
 ### or 
