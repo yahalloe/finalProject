@@ -1,0 +1,10 @@
+^C:\USERS\LEXUZ\ONEDRIVE - MSFT\ROOT (LAPTOP)\DOCUMENTS\CODE\C\FINALPROJECT\BUILD\CMAKEFILES\37644ACC05BD3EE288ED3F3BEC822DB9\GENERATE.STAMP.RULE
+setlocal
+C:\mingw64\bin\cmake.exe "-SC:/Users/lexuz/OneDrive - MSFT/root (laptop)/Documents/code/c/finalProject" "-BC:/Users/lexuz/OneDrive - MSFT/root (laptop)/Documents/code/c/finalProject/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/lexuz/OneDrive - MSFT/root (laptop)/Documents/code/c/finalProject/build/main.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,130 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/lexuz/.utils/llvm-mingw/lib/clang/17/include",
+						"C:/Users/lexuz/.utils/llvm-mingw/include"
+					],
+					"linkDirectories" : 
+					[
+						"C:/Users/lexuz/.utils/llvm-mingw/x86_64-w64-mingw32/lib",
+						"C:/Users/lexuz/.utils/llvm-mingw/x86_64-w64-mingw32/mingw/lib",
+						"C:/Users/lexuz/.utils/llvm-mingw/lib",
+						"C:/Users/lexuz/.utils/llvm-mingw/lib/clang/17/lib/windows"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"mingw32",
+						"unwind",
+						"moldname",
+						"mingwex",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"unwind",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/Users/lexuz/.utils/llvm-mingw/bin/clang.exe",
+				"version" : "17.0.4"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "Clang",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"C:/Users/lexuz/.utils/llvm-mingw/include/c++/v1",
+						"C:/Users/lexuz/.utils/llvm-mingw/lib/clang/17/include",
+						"C:/Users/lexuz/.utils/llvm-mingw/include"
+					],
+					"linkDirectories" : 
+					[
+						"C:/Users/lexuz/.utils/llvm-mingw/x86_64-w64-mingw32/lib",
+						"C:/Users/lexuz/.utils/llvm-mingw/x86_64-w64-mingw32/mingw/lib",
+						"C:/Users/lexuz/.utils/llvm-mingw/lib",
+						"C:/Users/lexuz/.utils/llvm-mingw/lib/clang/17/lib/windows"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"c++",
+						"mingw32",
+						"unwind",
+						"moldname",
+						"mingwex",
+						"advapi32",
+						"shell32",
+						"user32",
+						"kernel32",
+						"mingw32",
+						"unwind",
+						"moldname",
+						"mingwex",
+						"kernel32"
+					]
+				},
+				"path" : "C:/Users/lexuz/.utils/llvm-mingw/bin/clang++.exe",
+				"version" : "17.0.4"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "C:/Users/lexuz/.utils/llvm-mingw/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

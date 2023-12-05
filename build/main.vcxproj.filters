@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lexuz\OneDrive - MSFT\root (laptop)\Documents\code\c\finalProject\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\lexuz\OneDrive - MSFT\root (laptop)\Documents\code\c\finalProject\library.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lexuz\OneDrive - MSFT\root (laptop)\Documents\code\c\finalProject\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E4980FD4-575F-32E6-BF31-D87A4EF8DE47}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

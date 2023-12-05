@@ -1,0 +1,3 @@
+C:/Users/lexuz/Documents/code/c/finalProject/build/CMakeFiles/main.dir
+C:/Users/lexuz/Documents/code/c/finalProject/build/CMakeFiles/edit_cache.dir
+C:/Users/lexuz/Documents/code/c/finalProject/build/CMakeFiles/rebuild_cache.dir

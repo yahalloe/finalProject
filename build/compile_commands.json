@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/lexuz/Documents/code/c/finalProject/build",
+  "command": "C:\\Users\\lexuz\\.utils\\llvm-mingw\\bin\\clang.exe   -g -o CMakeFiles\\main.dir\\main.c.obj -c C:\\Users\\lexuz\\Documents\\code\\c\\finalProject\\main.c",
+  "file": "C:/Users/lexuz/Documents/code/c/finalProject/main.c",
+  "output": "CMakeFiles/main.dir/main.c.obj"
+},
+{
+  "directory": "C:/Users/lexuz/Documents/code/c/finalProject/build",
+  "command": "C:\\Users\\lexuz\\.utils\\llvm-mingw\\bin\\clang.exe   -g -o CMakeFiles\\main.dir\\library.c.obj -c C:\\Users\\lexuz\\Documents\\code\\c\\finalProject\\library.c",
+  "file": "C:/Users/lexuz/Documents/code/c/finalProject/library.c",
+  "output": "CMakeFiles/main.dir/library.c.obj"
+}
+]
