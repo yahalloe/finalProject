@@ -1,2 +1,7 @@
-.vs
+/.vs
 *.exe
+build/
+/out
+bin/
+.idea/
+CMakeSettings.json
