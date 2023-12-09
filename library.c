@@ -14,7 +14,7 @@ const char COMPUTER = 'O';
 const char *text1 = "Welcome to the world's most played 2D game! ";
 const char *text2 = "The Tic-tac-toe! ";
 const char *text3 = "Play\t\t(1)\nRead rules\t(2)\n\nchoice: ";
-const char *text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\n\nchoice: ";
+const char *text4 = "Choose mode:\n\nPlayer vs Player\t(1)\nPlayer vs Bot\t\t(2)\nPlayer vs Hard Bot\t(3)\n\nchoice: ";
 const char *rule1 = "Rules:-\n";
 const char *rule2 = "\n1: Each player will be entering the number to put respective X or O in the desired position";
 const char *rule3 = "\n2: Player who gets a combination of 3 same characters either diagonal or horizontally or \nvertically will be declared as the winner";
@@ -64,7 +64,7 @@ int getMode(void) {
     typeString(text4);
     while (1) {
         scanf_s("%d", &m);
-        if (m == 1 || m == 2) {
+        if (m == 1 || m == 2 || m == 3) {
             break;
         }
         else {
@@ -153,6 +153,40 @@ void computerMove(void)
     }
 }
 
+// Function to find the best move for the computer player using Minimax
+void hardComputerMove() {
+    int bestMove = -1;
+    int bestVal = -1000; // Initialize with a very small value
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == ' ') {
+                // Make the move
+                board[i][j] = COMPUTER;
+
+                // Calculate the evaluation score for this move using Minimax
+                int moveVal = minimax(0, 0);
+
+                // Undo the move (backtrack)
+                board[i][j] = ' ';
+
+                // If the current move is better than the best move so far, update bestMove and bestVal
+                if (moveVal > bestVal) {
+                    bestMove = i * 3 + j; // Convert 2D coordinates to a 1D index
+                    bestVal = moveVal;
+                }
+            }
+        }
+    }
+
+    // Make the best move on the board
+    if (bestMove != -1) {
+        int i = bestMove / 3;
+        int j = bestMove % 3;
+        board[i][j] = COMPUTER;
+    }
+}
+
 char checkWinner(void) 
 {
     // rows
@@ -185,5 +219,88 @@ void printWinner(char winner)
     }
     else {
         printf("\n\t\t\t\t  IT'S A TIE!\n");
+    }
+}
+
+// Function to check if the current board configuration is terminal (game-over)
+int isTerminal() {
+    // Check for a winner
+    char winner = checkWinner();
+    if (winner == PLAYER || winner == COMPUTER) {
+        return 1; // Game-over: there's a winner
+    }
+
+    // Check if the board is full (tie)
+    if (checkFreeSpaces() == 0) {
+        return 1; // Game-over: board is full (tie)
+    }
+
+    return 0; // Game is still in progress
+}
+
+
+// Function to evaluate the score of the current board configuration
+int evaluate() {
+    // Check for a winner
+    char winner = checkWinner();
+    if (winner == COMPUTER) {
+        return 10; // Computer wins, assign a high score
+    } else if (winner == PLAYER) {
+        return -10; // Player wins, assign a low score
+    }
+
+    // If there's no winner, return a neutral score
+    return 0;
+}
+
+// Minimax function
+int minimax(int depth, int isMaximizingPlayer) {
+    if (isTerminal()) {
+        return evaluate();
+    }
+
+    if (isMaximizingPlayer) {
+        int bestVal = -1000; // Initialize with a very small value
+        // Loop through available moves
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == ' ') {
+                    // Make the move
+                    board[i][j] = COMPUTER;
+
+                    // Calculate the evaluation score for this move using Minimax
+                    int value = minimax(depth + 1, !isMaximizingPlayer);
+
+                    // Undo the move (backtrack)
+                    board[i][j] = ' ';
+
+                    // Update bestVal if needed
+                    bestVal = (value > bestVal) ? value : bestVal;
+                }
+            }
+        }
+        return bestVal;
+    }
+    else {
+        int bestVal = 1000; // Initialize with a very large value
+        // Loop through available moves
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == ' ') {
+                    // Make the move
+                    board[i][j] = PLAYER;
+
+                    // Calculate the evaluation score for this move using Minimax
+                    int value = minimax(depth + 1, !isMaximizingPlayer);
+
+                    // Undo the move (backtrack)
+                    board[i][j] = ' ';
+
+                    // Update bestVal if needed
+                    bestVal = (value < bestVal) ? value : bestVal;
+                }
+            }
+        }
+        return bestVal;
     }
 }

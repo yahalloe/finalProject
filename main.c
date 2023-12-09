@@ -65,13 +65,25 @@ int main(const int argc, const char *argv[]) {
           }
 
           else if (mode == 2) {
-            // Player vs computer
+            // Player vs randComputer
 
             if (switchHumanBot == 'h') {
               humanMove('X');
               switchHumanBot = 'b';
             } else {
               computerMove();
+              switchHumanBot = 'h';
+            }
+          }
+
+          else if (mode == 3) {
+            // Player vs hardComputer
+
+            if (switchHumanBot == 'h') {
+              humanMove('X');
+              switchHumanBot = 'b';
+            } else {
+              hardComputerMove();
               switchHumanBot = 'h';
             }
           }

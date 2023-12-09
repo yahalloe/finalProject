@@ -115,3 +115,18 @@ char checkWinner(void);
  * prints if there is a winner, unless tie
  */
 void printWinner(char winner);
+
+/*
+ * Function to check if the current board configuration is terminal (game-over)
+ */
+int isTerminal(void);
+
+/*
+ * Function to evaluate the score of the current board configuration
+ */
+int evaluate(void);
+
+/*
+ * hard ai
+ */
+int minimax(int depth, int isMaximizingPlayer);
