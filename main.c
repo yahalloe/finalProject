@@ -78,7 +78,7 @@ int main(const int argc, const char *argv[]) {
 
           else if (mode == 3) {
             // Player vs hardComputer
-
+            system("color 75");
             if (switchHumanBot == 'h') {
               humanMove('X');
               switchHumanBot = 'b';
@@ -101,7 +101,7 @@ int main(const int argc, const char *argv[]) {
       resp = toupper(resp);
       COLORBLUE;
     } while (resp == 'Y');
-    
+
     system("color f4");
     CLEAR;
     typeString(text6);
