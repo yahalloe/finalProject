@@ -2,6 +2,6 @@
 *.exe
 build/
 /out
-bin/
+bin
 .idea/
 CMakeSettings.json
