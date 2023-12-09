@@ -6,7 +6,7 @@
 
 * 🤖 A VS bot game mode
   - normal bot
-  - ~~hard bot~~ (under development)
+  - hard bot
 * 🧍‍♂️A player vs player
 
 ![image](https://github.com/yahalloe/finalProject/assets/147316835/3f347701-ffbd-4aaa-b904-831b45328fe8)
@@ -66,7 +66,7 @@ $ ./main
 ---
 
 Things to be implemented:
-1. harder bot (the color or theme changes)
+1. ~~harder bot~~ (the color or theme changes)
 2. leaderboard file // fopen()
 3. ~~1 on 1 game mode~~
 4. different color for each symbol i.e. X - light blue 0 - gray
