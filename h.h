@@ -106,6 +106,11 @@ void humanMove(char playerLetter);
 void computerMove(void);
 
 /*
+ * Function to find the best move for the computer player using Minimax
+ */
+void hardComputerMove(void);
+
+/*
  * return what chracter had won
  * else; return a ' ' for tie
  */

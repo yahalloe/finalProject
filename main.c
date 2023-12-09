@@ -12,7 +12,7 @@ int main(const int argc, const char *argv[]) {
   int s;
   int c;
   if (argc != 1) {
-    printf("too many arguments to function.");
+    printf("too many arguments to function: %s",*argv);
     return 0;
   }
   greet();
@@ -37,7 +37,7 @@ int main(const int argc, const char *argv[]) {
     }
   }
   if (s == 1) {
-    char resp = ' ';
+    int resp;
 
     do {
 
@@ -99,9 +99,10 @@ int main(const int argc, const char *argv[]) {
       typeString(text5);
       resp = _getch(); // experimenting with getch
       resp = toupper(resp);
-
+      COLORBLUE;
     } while (resp == 'Y');
-
+    
+    system("color f4");
     CLEAR;
     typeString(text6);
     COLORBLUE;

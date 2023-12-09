@@ -137,7 +137,7 @@ void computerMove(void)
     int y;
     
     // seed by time
-    srand(time(0));
+    srand((unsigned)time(NULL));
 
     if (checkFreeSpaces() > 0) {
         do 
@@ -154,9 +154,10 @@ void computerMove(void)
 }
 
 // Function to find the best move for the computer player using Minimax
-void hardComputerMove() {
+void hardComputerMove(void) {
     int bestMove = -1;
     int bestVal = -1000; // Initialize with a very small value
+    int moveVal;
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -165,7 +166,7 @@ void hardComputerMove() {
                 board[i][j] = COMPUTER;
 
                 // Calculate the evaluation score for this move using Minimax
-                int moveVal = minimax(0, 0);
+                moveVal = minimax(0, 0);
 
                 // Undo the move (backtrack)
                 board[i][j] = ' ';
@@ -223,7 +224,7 @@ void printWinner(char winner)
 }
 
 // Function to check if the current board configuration is terminal (game-over)
-int isTerminal() {
+int isTerminal(void) {
     // Check for a winner
     char winner = checkWinner();
     if (winner == PLAYER || winner == COMPUTER) {
@@ -240,7 +241,7 @@ int isTerminal() {
 
 
 // Function to evaluate the score of the current board configuration
-int evaluate() {
+int evaluate(void) {
     // Check for a winner
     char winner = checkWinner();
     if (winner == COMPUTER) {
@@ -255,6 +256,7 @@ int evaluate() {
 
 // Minimax function
 int minimax(int depth, int isMaximizingPlayer) {
+    int value;
     if (isTerminal()) {
         return evaluate();
     }
@@ -269,7 +271,7 @@ int minimax(int depth, int isMaximizingPlayer) {
                     board[i][j] = COMPUTER;
 
                     // Calculate the evaluation score for this move using Minimax
-                    int value = minimax(depth + 1, !isMaximizingPlayer);
+                    value = minimax(depth + 1, !isMaximizingPlayer);
 
                     // Undo the move (backtrack)
                     board[i][j] = ' ';
@@ -291,7 +293,7 @@ int minimax(int depth, int isMaximizingPlayer) {
                     board[i][j] = PLAYER;
 
                     // Calculate the evaluation score for this move using Minimax
-                    int value = minimax(depth + 1, !isMaximizingPlayer);
+                    value = minimax(depth + 1, !isMaximizingPlayer);
 
                     // Undo the move (backtrack)
                     board[i][j] = ' ';
