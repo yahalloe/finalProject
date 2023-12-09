@@ -76,7 +76,7 @@ void greet(void);
 void printRules(void);
 
 /*
- * 
+ *  gets the mode thet the players wants to play
  */
 int getMode(void);
 
