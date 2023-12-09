@@ -5,7 +5,7 @@
 
 * 🤖 A VS bot game mode
   - normal bot
-  - hard bot
+  - hard bot (minimax)
 * 🧍‍♂️A player vs player
 
 ![image](https://github.com/yahalloe/finalProject/assets/147316835/3f347701-ffbd-4aaa-b904-831b45328fe8)
