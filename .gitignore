@@ -3,5 +3,5 @@ build/
 /out
 .idea/
 CMakeSettings.json
-mainn.cpp
+*mainn.cpp
 .vscode
