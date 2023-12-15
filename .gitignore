@@ -4,3 +4,4 @@ build/
 .idea/
 CMakeSettings.json
 mainn.cpp
+.vscode
