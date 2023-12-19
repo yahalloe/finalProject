@@ -11,4 +11,4 @@ library.o: library.c
 
 clean: 
 	echo "removing everything, expect the source files"
-	rm main.o library.o tictac.o
+	rm main.o library.o tictac.exe
