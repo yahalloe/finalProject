@@ -119,7 +119,7 @@ void humanMove(char playerLetter)
         printf("\n\t\t\t\t  Player %c \n\t\t\tEnter column #(1-3) (vertical): ", playerLetter);
         scanf_s("%d", &y);
         y--;
-
+        printf("Selected coordinates: (%d, %d)\n", x, y); // Debugging print statement
         if(board[x][y] != ' ') {
 
             printf("\t\t\t\tInvalid Move!\n");
@@ -131,25 +131,25 @@ void humanMove(char playerLetter)
     } while (board[x][y] != ' ');
 } 
 
-void computerMove(void)
-{   
-    int x;
-    int y;
-    
-    // seed by time
-    srand((unsigned)time(NULL));
+void computerMove(int mode) {
+    int i, j;
+    int found = 0; // Flag to determine if an empty space is found
 
-    if (checkFreeSpaces() > 0) {
-        do 
-        {
-            x = rand() % 3;
-            y = rand() % 3;
-
-        } while (board[x][y] != ' ');
-        board[x][y] = COMPUTER;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            if (board[i][j] == ' ') {
+                board[i][j] = COMPUTER;
+                found = 1;
+                break; // Break out of the inner loop
+            }
+        }
+        if (found) {
+            break; // Break out of the outer loop
+        }
     }
-    else {
-        printWinner(' ');
+
+    if (!found) {
+        printWinner(' ', mode);
     }
 }
 
@@ -182,9 +182,13 @@ void hardComputerMove(void) {
 
     // Make the best move on the board
     if (bestMove != -1) {
-        int i = bestMove / 3;
-        int j = bestMove % 3;
-        board[i][j] = COMPUTER;
+        int i = bestMove / 3;  // Row index
+        int j = bestMove % 3;  // Column index
+
+        if (board[i][j] == ' ') {
+            board[i][j] = COMPUTER; // Place the move only if the cell is empty
+        }
+        // Add an error message or handle the case where the cell is already occupied
     }
 }
 
@@ -213,10 +217,18 @@ char checkWinner(void)
     return ' ';
 }   
 
-void printWinner(char winner) 
+void printWinner(char winner, int mode) 
 {
     if (winner != ' ') {
-        printf("\n\t\t\t\t  %c WINS!\n", winner);
+        if (mode == 1) {
+            printf("\n\t\t\t\t  %c WINS!\n", winner);
+        } else {
+            if (winner == 'X') {
+                printf("\n\t\t\t\t  Player WINS!\n");
+            } else if (winner == 'O') {
+                printf("\n\t\t\t\t  Computer WINS!\n");
+            }
+        }
     }
     else {
         printf("\n\t\t\t\t  IT'S A TIE!\n");
@@ -242,7 +254,6 @@ int isTerminal(void) {
 
 // Function to evaluate the score of the current board configuration
 int evaluate(void) {
-    // Check for a winner
     char winner = checkWinner();
     if (winner == COMPUTER) {
         return 10; // Computer wins, assign a high score
@@ -250,8 +261,7 @@ int evaluate(void) {
         return -10; // Player wins, assign a low score
     }
 
-    // If there's no winner, return a neutral score
-    return 0;
+    return 0; // If no winner, return a neutral score
 }
 
 // Minimax function

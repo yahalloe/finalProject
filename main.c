@@ -20,8 +20,8 @@ int main(const int argc, const char *argv[]) {
 
   while (1) {
     scanf_s("%d", &s);
-    if (s == 1 || s == 2)
-      break;
+    if (s == 1 || s == 2) {
+      break; }
     else {
       int x = rand() % 2 + 1;
       if (x == 1) {
@@ -32,8 +32,7 @@ int main(const int argc, const char *argv[]) {
         CLEAR;
         printf("Bruh. *sigh*\nchoose 1 or 2!\n\a> ");
       }
-      while ((c = getchar()) != '\n' && c != EOF) {
-      }
+      while ((c = getchar()) != '\n' && c != EOF) {}
     }
   }
   if (s == 1) {
@@ -71,7 +70,7 @@ int main(const int argc, const char *argv[]) {
               humanMove('X');
               switchHumanBot = 'b';
             } else {
-              computerMove();
+              computerMove(mode);
               switchHumanBot = 'h';
             }
           }
@@ -93,7 +92,7 @@ int main(const int argc, const char *argv[]) {
           printBoard();
         }
 
-        printWinner(winner);
+        printWinner(winner, mode);
       } while (winner == ' ' && resp == 'Y');
 
       typeString(text5);

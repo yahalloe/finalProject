@@ -12,8 +12,8 @@
 #include <ctype.h>
 #include <time.h>
 #include <conio.h>
-#define INTER_CHAR_DURATION 75
-#define INTER_TEXT_DURATION 900
+#define INTER_CHAR_DURATION 20
+#define INTER_TEXT_DURATION 400
 #if defined(_WIN32) || defined(__WIN32__)
 #include <Windows.h>
 #define CLEAR system("cls")
@@ -103,7 +103,7 @@ void humanMove(char playerLetter);
 /*
  * funtion for the player's move
  */
-void computerMove(void);
+void computerMove(int mode);
 
 /*
  * Function to find the best move for the computer player using Minimax
@@ -119,7 +119,7 @@ char checkWinner(void);
 /*
  * prints if there is a winner, unless tie
  */
-void printWinner(char winner);
+void printWinner(char winner, int mode);
 
 /*
  * Function to check if the current board configuration is terminal (game-over)
@@ -134,4 +134,4 @@ int evaluate(void);
 /*
  * hard ai
  */
-int minimax(int depth, int isMaximizingPlayer);
+int minimax(int depth, int isMaximizingPlayern);
