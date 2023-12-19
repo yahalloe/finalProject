@@ -5,4 +5,4 @@ build/
 CMakeSettings.json
 *mainn.cpp
 .vscode
-.o
+*.o
