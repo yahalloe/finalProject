@@ -95,9 +95,15 @@ int main(const int argc, const char *argv[]) {
         printWinner(winner, mode);
       } while (winner == ' ' && resp == 'Y');
 
-      typeString(text5);
-      resp = _getch(); // experimenting with getch
-      resp = toupper(resp);
+      do {      
+          CLEAR;
+          typeString(text5);
+          resp = _getch(); // experimenting with getch
+          resp = toupper(resp);
+          if (resp == 'Y' || resp == 'N') {
+            break;
+          }
+      }while  (resp != 'Y' && resp != 'N'); 
       COLORBLUE;
     } while (resp == 'Y');
 
