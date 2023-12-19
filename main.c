@@ -12,8 +12,10 @@ int main(const int argc, const char *argv[]) {
   int s;
   int c;
   if (argc != 1) {
-    printf("too many arguments to function: %s",*argv);
+    printf("too many arguments to function: %s",argv[1]);
     return 0;
+  } else if (argc > 2) {
+    printf("too many arguments to function: %s",argv[1]);
   }
   greet();
   COLORBLUE;
