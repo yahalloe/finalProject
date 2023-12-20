@@ -16,7 +16,7 @@ int main(const int argc, const char *argv[]) {
     return 0;
   } else if (argc > 2) {
     printf("too many arguments to function: %s",argv[1]);
-  }
+  } //else
   greet();
   COLORBLUE;
 
@@ -56,39 +56,40 @@ int main(const int argc, const char *argv[]) {
           CLEAR;
           printBoard();
 
-          if (mode == 1) {
-            // Player vs player
+          switch (mode) {
+            case 1:
+              // Player vs player
 
-            humanMove(currentPlayer);
+              humanMove(currentPlayer);
 
-            // Reverses the letter
-            currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+              // Reverses the letter
+              currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+            break;
+
+            case 2: 
+              // Player vs randComputer
+
+              if (switchHumanBot == 'h') {
+                humanMove('X');
+                switchHumanBot = 'b';
+              } else {
+                computerMove(mode);
+                switchHumanBot = 'h';
+              }
+            break;
+
+            case 3: 
+              // Player vs hardComputer
+              system("color 75");
+              if (switchHumanBot == 'h') {
+                humanMove('X');
+                switchHumanBot = 'b';
+              } else {
+                hardComputerMove();
+                switchHumanBot = 'h';
+              }
+            break;
           }
-
-          else if (mode == 2) {
-            // Player vs randComputer
-
-            if (switchHumanBot == 'h') {
-              humanMove('X');
-              switchHumanBot = 'b';
-            } else {
-              computerMove(mode);
-              switchHumanBot = 'h';
-            }
-          }
-
-          else if (mode == 3) {
-            // Player vs hardComputer
-            system("color 75");
-            if (switchHumanBot == 'h') {
-              humanMove('X');
-              switchHumanBot = 'b';
-            } else {
-              hardComputerMove();
-              switchHumanBot = 'h';
-            }
-          }
-
           winner = checkWinner();
           CLEAR;
           printBoard();
@@ -99,6 +100,8 @@ int main(const int argc, const char *argv[]) {
 
       do {      
           CLEAR;
+          printBoard ();
+          printWinner(winner, mode);
           typeString(text5);
           resp = _getch(); // experimenting with getch
           resp = toupper(resp);
